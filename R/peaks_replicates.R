@@ -1,6 +1,6 @@
 #' @title Calculates peak numbers for the data set with all replicates (total, maximum, and minimum).
 #'
-#' @description Returns total, maximum, and minimum number of peaks in the binary matrix.
+#' @description Returns the total, maximum, and minimum number of peaks in the binary matrix.
 #'
 #' @param x Binary matrix comprising replicate pairs.
 #'

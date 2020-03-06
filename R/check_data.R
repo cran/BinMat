@@ -1,8 +1,8 @@
 #' @title Checks binary matrix for unwanted characters.
 #'
-#' @description Checks for unwanted values (other than 1, 0, and ?).
+#' @description Checks for unwanted values (other than 1, 0, and ?) in the data set.
 #'
-#' @param x A CSV file containing replicate pairs of binary data.
+#' @param x A CSV file containing replicate sample pairs of binary data.
 #'
 #' @return Index positions where unwanted values occur (row, column).
 #'

@@ -11,7 +11,8 @@
 #' @param labs Indicate whether labels should appear on the graph or not (TRUE or FALSE). Default = FALSE.
 #' @return nMDS plot.
 #'
-#' @examples  mat = BinMatInput_ordination
+#' @examples
+#' mat = BinMatInput_ordination
 #' group.names(mat)
 #' clrs = c("red", "green", "black")
 #' shp = c(16,16,16)

@@ -1,7 +1,7 @@
 #' @title Removes samples with peaks equal to or less than a specified threshold value.
 #'
 #' @description Removes samples with a peak number less than a specified value.
-#' @param x Binary matrix - consolidated or original.
+#' @param x Binary matrix (consolidated or original).
 #' @param thresh Peak threshold value for removal.
 #'
 #' @return Filtered dataset, and either the row name/s or row number/s of samples that were removed.
