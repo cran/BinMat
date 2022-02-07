@@ -11,7 +11,10 @@ nmds(
   pt_size = 1,
   colours,
   shapes,
-  labs = FALSE
+  labs = FALSE,
+  include_ellipse = FALSE,
+  dimension1 = 1,
+  dimension2 = 2
 )
 }
 \arguments{
@@ -28,18 +31,24 @@ nmds(
 \item{shapes}{Vector containing pch values for shapes to be used for points.}
 
 \item{labs}{Indicate whether labels should appear on the graph or not (TRUE or FALSE). Default = FALSE.}
+
+\item{include_ellipse}{Indicate whether ellipses should be included around groups. Default = FALSE.}
+
+\item{dimension1}{Indicate the first dimension to plot (1, 2, or 3) for the x axis. If k = 2, the first two dimensions will automatically be plotted. If k = 3, select between the three.}
+
+\item{dimension2}{Indicate the second dimension to plot (1, 2, or 3) for the y axis}
 }
 \value{
 nMDS plot.
 }
 \description{
-Creates an non-metric multidimensional scaling plot from a consolidated binary matrix with grouping information. Colours and shapes of plotted points need to be specified. For example, if there are two groups, then: clrs = c("red", "blue"), sh = c(16, 16). This assigns red to the first group name, and blue to the second. Both will have a pch shape of 16 (round dot). These two vectors are then passed to the function nmds() as: colours = clrs, shapes = sh.
+Creates an nMDS plot from a consolidated binary matrix with grouping information. Colours and shapes of plotted points need to be specified. For example, if there are two groups, then: clrs = c("red", "blue"), sh = c(16, 16). This assigns red to the first group name, and blue to the second. Both will have a pch shape of 16 (round dot). These two vectors are then passed to the function nmds() as: colours = clrs, shapes = sh.
 }
 \examples{
-mat = BinMatInput_ordination
+ mat = BinMatInput_ordination
 group.names(mat)
 clrs = c("red", "green", "black")
-shp = c(16,16,16)
-nmds(mat, colours = clrs, shapes = shp, labs = TRUE)
+shps = c(16,16,16)
+nmds(mat, colours = clrs, shapes = shps, labs = TRUE, include_ellipse = TRUE)
 
 }

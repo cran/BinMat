@@ -7,7 +7,7 @@
 peak.remove(x, thresh)
 }
 \arguments{
-\item{x}{Binary matrix (consolidated or original).}
+\item{x}{Binary matrix - consolidated or original.}
 
 \item{thresh}{Peak threshold value for removal.}
 }

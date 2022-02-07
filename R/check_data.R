@@ -1,8 +1,8 @@
 #' @title Checks binary matrix for unwanted characters.
 #'
-#' @description Checks for unwanted values (other than 1, 0, and ?) in the data set.
+#' @description Checks for unwanted values (other than 1, 0, and ?).
 #'
-#' @param x A CSV file containing replicate sample pairs of binary data.
+#' @param x A CSV file containing replicate pairs of binary data.
 #'
 #' @return Index positions where unwanted values occur (row, column).
 #'
@@ -16,9 +16,9 @@ check.data = function(x){
   row.names(x) <- x[[1]]
   x[,1] <- NULL
   x[,] <- sapply(x[,], as.numeric)
-  answer = which(x != 0 & x != 1 & x != "?", arr.ind = TRUE)
-  if(length(answer) > 0) message(answer)
-  else {message("None found.")}
+  answer = which(x != 0 & x != 1 & x != "?", arr.ind = T)
+  if(length(answer) > 0) print(answer)
+  else {writeLines("None found.")}
 
 }
 

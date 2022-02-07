@@ -7,13 +7,13 @@
 check.data(x)
 }
 \arguments{
-\item{x}{A CSV file containing replicate sample pairs of binary data.}
+\item{x}{A CSV file containing replicate pairs of binary data.}
 }
 \value{
 Index positions where unwanted values occur (row, column).
 }
 \description{
-Checks for unwanted values (other than 1, 0, and ?) in the data set.
+Checks for unwanted values (other than 1, 0, and ?).
 }
 \examples{
 data(BinMatInput_reps)

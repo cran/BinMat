@@ -17,7 +17,7 @@ shepard(x, k_val = 2, dist_meth = "binary")
 Shepard plot.
 }
 \description{
-Creates a Shepard plot for the non-metric multidimensional scaling plot. This indicates the 'goodness of fit' of the original distance matrix vs the ordination representation. A high R-squared value is favourable.
+Creates a Shepard plot for the nMDS. This indicates the 'goodness of fit' of the original distance matrix vs the ordination representation. A high R-squared value is favourable.
 }
 \examples{
 mat = BinMatInput_ordination

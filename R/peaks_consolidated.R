@@ -1,8 +1,8 @@
 #' @title Calculates peak numbers for a consolidated data set (total, maximum, and minimum).
 #'
-#' @description Returns the total, maximum, and minimum number of peaks in the binary matrix.
+#' @description Returns total, maximum, and minimum number of peaks in the binary matrix.
 #'
-#' @param x Consolidated binary matrix (consolidated in BinMat, or a pre-processed matrix from file).
+#' @param x Binary matrix comprising replicate pairs.
 #'
 #' @return Peak information.
 #'
@@ -25,17 +25,19 @@ peaks.consolidated = function(x){
 
   }
 
-  summary_table = data.frame("Summary" = matrix(ncol = 1, nrow = 10))
-  summary_table[1,] = "Average no. peaks: "
-  summary_table[2,] = round(base::mean(nr_peaks),4)
-  summary_table[3,] = "sd: "
-  summary_table[4,] = round(stats::sd(nr_peaks),4)
-  summary_table[5,] = "Max. no. peaks: "
-  summary_table[6,] = max(nr_peaks)
-  summary_table[7,] = "Min. no. peaks: "
-  summary_table[8,] = min(nr_peaks)
-  summary_table[9,] = "No. loci: "
-  summary_table[10,] = ncol(x)
+  summary_table = data.frame("Summary" = matrix(ncol = 1, nrow = 5))
+  summary_table[1,1] = "Average no. peaks: "
+  summary_table[1,2] = round(base::mean(nr_peaks),4)
+  summary_table[2,1] = "sd: "
+  summary_table[2,2] = round(stats::sd(nr_peaks),4)
+  summary_table[3,1] = "Max. no. peaks: "
+  summary_table[3,2] = max(nr_peaks)
+  summary_table[4,1] = "Min. no. peaks: "
+  summary_table[4,2] = min(nr_peaks)
+  summary_table[5,1] = "No. loci: "
+  summary_table[5,2] = ncol(x)
+
+  colnames(summary_table) = c("Metric", "Value")
 
   return(summary_table)
 }

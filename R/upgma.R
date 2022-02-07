@@ -1,6 +1,6 @@
 #' @title Draws a hierarchical clustering tree (UPGMA).
 #'
-#' @description Creates an unweighted pair group method with arithmetic mean (UPGMA) hierarchical clustering tree, with a specified number of bootstrap repetitions.
+#' @description Creates a UPGMA hierarchical clustering tree, with a specified number of bootstrap repetitions.
 #'
 #' @param x Consolidated binarx matrix.
 #' @param bts Bootstrap replications. Set to 10 by default.

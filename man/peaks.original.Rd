@@ -13,7 +13,7 @@ peaks.original(x)
 Peak information.
 }
 \description{
-Returns the total, maximum, and minimum number of peaks in the binary matrix.
+Returns total, maximum, and minimum number of peaks in the binary matrix.
 }
 \examples{
 data(BinMatInput_reps)

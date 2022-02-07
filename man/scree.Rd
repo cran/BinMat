@@ -17,7 +17,7 @@ scree(x, dimensions = 4, dist_meth = "binary")
 Scree plot.
 }
 \description{
-Creates a scree plot for the non-metric multidimensional scaling plot. This indicates the optimum number of dimensions to use to minimise the stress value. The stress value is indicated by a red dotted line at 0.15. Values equal to or below this are considered acceptable.
+Creates a scree plot for the nMDS. This indicates the optimum number of dimensions to use to minimise the stress value.    The stress value is indicated by a red dotted line at 0.15. Values equal to or below this are considered acceptable.
 }
 \examples{
 mat = BinMatInput_ordination

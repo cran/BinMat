@@ -1,9 +1,9 @@
-#' Example input data containing a consolidated binary matrix with grouping information
+#' Example input data containing a consolidated binary matrix with groups
 #' @docType data
 #'
 #' @usage data(BinMatInput_ordination)
 #'
-#' @format A dataframe with columns for loci, and rows for samples. Grouping information is in the second column.
+#' @format A dataframe with columns for loci, and rows of replicate pairs. Grouping information is in the second column.
 #' @examples data(BinMatInput_ordination)
 #' mat = BinMatInput_ordination
 #' group.names(mat)

@@ -7,13 +7,13 @@
 peaks.consolidated(x)
 }
 \arguments{
-\item{x}{Consolidated binary matrix (consolidated in BinMat, or a pre-processed matrix from file).}
+\item{x}{Binary matrix comprising replicate pairs.}
 }
 \value{
 Peak information.
 }
 \description{
-Returns the total, maximum, and minimum number of peaks in the binary matrix.
+Returns total, maximum, and minimum number of peaks in the binary matrix.
 }
 \examples{
 data(BinMatInput_reps)

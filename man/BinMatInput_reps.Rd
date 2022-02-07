@@ -3,13 +3,15 @@
 \docType{data}
 \name{BinMatInput_reps}
 \alias{BinMatInput_reps}
-\title{Example input data containing a binary matrix comprising replicate sample pairs}
-\format{A dataframe with columns for loci, and rows for replicate sample pairs.}
+\title{Example input data containing a binary matrix comprising replicate pairs}
+\format{
+A dataframe with columns for loci, and rows of replicate pairs.
+}
 \usage{
 data(BinMatInput_reps)
 }
 \description{
-Example input data containing a binary matrix comprising replicate sample pairs
+Example input data containing a binary matrix comprising replicate pairs
 }
 \examples{
 data(BinMatInput_reps)

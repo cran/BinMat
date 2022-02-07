@@ -1,10 +1,10 @@
-#' Example input data containing a binary matrix comprising replicate sample pairs
+#' Example input data containing a binary matrix comprising replicate pairs
 #'
 #' @docType data
 #'
 #' @usage data(BinMatInput_reps)
 #'
-#' @format A dataframe with columns for loci, and rows for replicate sample pairs.
+#' @format A dataframe with columns for loci, and rows of replicate pairs.
 #'
 #' @examples data(BinMatInput_reps)
 #' mat = BinMatInput_reps

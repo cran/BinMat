@@ -3,13 +3,15 @@
 \docType{data}
 \name{BinMatInput_ordination}
 \alias{BinMatInput_ordination}
-\title{Example input data containing a consolidated binary matrix with grouping information}
-\format{A dataframe with columns for loci, and rows for samples. Grouping information is in the second column.}
+\title{Example input data containing a consolidated binary matrix with groups}
+\format{
+A dataframe with columns for loci, and rows of replicate pairs. Grouping information is in the second column.
+}
 \usage{
 data(BinMatInput_ordination)
 }
 \description{
-Example input data containing a consolidated binary matrix with grouping information
+Example input data containing a consolidated binary matrix with groups
 }
 \examples{
 data(BinMatInput_ordination)

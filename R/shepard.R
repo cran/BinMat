@@ -1,6 +1,6 @@
 #' @title Creates a shepard plot.
 #'
-#' @description Creates a Shepard plot for the non-metric multidimensional scaling plot. This indicates the 'goodness of fit' of the original distance matrix vs the ordination representation. A high R-squared value is favourable.
+#' @description Creates a Shepard plot for the nMDS. This indicates the 'goodness of fit' of the original distance matrix vs the ordination representation. A high R-squared value is favourable.
 #'
 #' @param x Consolidated binary matrix.
 #' @param k_val Number of dimensions. Set to 2 by default.
@@ -28,7 +28,7 @@ shepard = function(x, k_val = 2, dist_meth = "binary"){
   x = as.data.frame(x)
 
   # x[,2:ncol(x)] starts calculating the distance from the second column to avoid including the grouping column information
-  d = stats::dist((x[,2:ncol(x)]), method = dist_meth, diag = TRUE, upper = TRUE)
+  d = stats::dist((x[,2:ncol(x)]), method = dist_meth, diag = TRUE, upper = T)
   d = as.data.frame(as.matrix(d))
   d2 = stats::as.dist(d)
   d2 = d2 + 0.01 # adding 0.01 here to cover for cases where there are identical sequences, leading to zero distances. Zero distances give the error "Warning: Error in isoMDS: zero or negative distance between objects x and y"

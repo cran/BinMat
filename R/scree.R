@@ -1,6 +1,6 @@
 #' @title Draws a scree plot.
 #'
-#' @description Creates a scree plot for the non-metric multidimensional scaling plot. This indicates the optimum number of dimensions to use to minimise the stress value. The stress value is indicated by a red dotted line at 0.15. Values equal to or below this are considered acceptable.
+#' @description Creates a scree plot for the nMDS. This indicates the optimum number of dimensions to use to minimise the stress value.    The stress value is indicated by a red dotted line at 0.15. Values equal to or below this are considered acceptable.
 #'
 #' @param x Consolidated binary matrix with grouping information in column 2.
 #' @param dimensions Number of dimensions to plot. Set to 4 by default.
@@ -28,7 +28,7 @@ scree = function(x, dimensions = 4, dist_meth = "binary") {
   x = as.data.frame(x)
 
   # x[,2:ncol(x)] starts calculating the distance from the second column to avoid including the grouping column information
-  d = stats::dist((x[,2:ncol(x)]), method = dist_meth, diag = TRUE, upper = TRUE)
+  d = stats::dist((x[,2:ncol(x)]), method = dist_meth, diag = TRUE, upper = T)
   d = as.data.frame(as.matrix(d))
   d2 = stats::as.dist(d)
   d2 = d2 + 0.01 # adding 0.01 here to cover for cases where there are identical sequences, leading to zero distances. Zero distances give the error "Warning: Error in isoMDS: zero or negative distance between objects x and y"

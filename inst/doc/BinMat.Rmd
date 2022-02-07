@@ -23,9 +23,9 @@ vignette: >
 
 <br/><br/>
 
-The idea behind this package was taken from Clarke's M.Sc. thesis entitled <br/>
+The idea behind this package was taken from my M.Sc. project <br/>
 "*A genetic analysis of the species and intraspecific lineages of* Dactylopius *Costa (Hemiptera:Dactylopiidae)*" <br/>
-(doi = [10.13140/RG.2.2.28470.86083](https://www.researchgate.net/publication/339124038_A_genetic_analysis_of_the_species_and_intraspecific_lineages_of_Dactylopius_Costa_Hemiptera_Dactylopiidae)). The GUI version of this package is available on the [R Shiny online server](https://clarkevansteenderen.shinyapps.io/BINMAT/), or it is accessible via GitHub by typing: <br/>
+See the publication in the [Biological Control journal](https://www.sciencedirect.com/science/article/pii/S1049964420306538), and the thesis on [Research Gate](https://www.researchgate.net/publication/339124038_A_genetic_analysis_of_the_species_and_intraspecific_lineages_of_Dactylopius_Costa_Hemiptera_Dactylopiidae). The GUI version of this package is available on the [R Shiny online server](https://clarkevansteenderen.shinyapps.io/BINMAT/), or it is accessible via GitHub by typing: <br/>
 shiny::runGitHub("BinMat", "CJMvS") <br/>
 into the console in R.
 
