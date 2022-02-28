@@ -9,6 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+
 ![](logo.png)
 
 
@@ -25,8 +26,12 @@ vignette: >
 
 The idea behind this package was taken from my M.Sc. project <br/>
 "*A genetic analysis of the species and intraspecific lineages of* Dactylopius *Costa (Hemiptera:Dactylopiidae)*" <br/>
-See the publication in the [Biological Control journal](https://www.sciencedirect.com/science/article/pii/S1049964420306538), and the thesis on [Research Gate](https://www.researchgate.net/publication/339124038_A_genetic_analysis_of_the_species_and_intraspecific_lineages_of_Dactylopius_Costa_Hemiptera_Dactylopiidae). The GUI version of this package is available on the [R Shiny online server](https://clarkevansteenderen.shinyapps.io/BINMAT/), or it is accessible via GitHub by typing: <br/>
-shiny::runGitHub("BinMat", "CJMvS") <br/>
+See the publication in the [Biological Control journal](https://www.sciencedirect.com/science/article/pii/S1049964420306538), and the thesis on [Research Gate](https://www.researchgate.net/publication/339124038_A_genetic_analysis_of_the_species_and_intraspecific_lineages_of_Dactylopius_Costa_Hemiptera_Dactylopiidae). The GUI version of this package is available on the [R Shiny online server](https://clarkevansteenderen.shinyapps.io/BINMAT/), or it is accessible via GitHub by typing:
+
+```{}
+shiny::runGitHub("BinMat", "CJMvS")
+```
+
 into the console in R.
 
 <br/>
@@ -157,14 +162,16 @@ Average Jaccard error = (0.67+0.33) / 2 = 0.5
 
 ## **WORKED EXAMPLE**
 
-There are two sample data sets embedded in the package: <br/>
+There are four sample data sets embedded in the package: <br/>
 
-1.BinMatInput_reps.R <br/>
-2.BinMatInput_ordination.R <br/>
+1. BinMatInput_reps <br/>
+2. BinMatInput_ordination <br/>
+3. bunias_orientalis <br/>
+4. nymphaea <br/>
 
-These are used in the following worked example.
+The first two are small made-up datasets, and illustrate how the BinMat functions are implemented:
 
-```{r setup}
+```{r setup, fig.height = 5, fig.width = 5}
 library(BinMat)
 
 data1 = BinMatInput_reps
@@ -211,5 +218,34 @@ scree(data2)
 shepard(data2)
 # Create an nMDS plot for the data. Default dimension is 2
 nmds(data2, colours = clrs, shapes = shps, labs = TRUE)
+
+```
+
+## REAL-WORLD WORKED EXAMPLE
+
+The **bunias_orientalis** and **nymphaea** datasets are real-world AFLP and ISSR files, respectively, and have already been consolidated by BinMat. These produce nMDS plots, as shown below:
+
+### *Bunias orientalis*
+
+![](BuniasOrientalis.png)
+
+```{r fig.height = 5, fig.width = 5}
+
+bunias = bunias_orientalis
+group.names(bunias)
+nmds(bunias, labs = FALSE, include_ellipse = TRUE, legend_pos = "right")
+
+```
+
+### *Nymphaea*
+
+![](nymphaea_lotus.png){width=50%}
+
+```{r fig.height = 7, fig.width = 7}
+
+nymph = nymphaea
+group.names(nymph)
+colrs = c("dodgerblue", "black", "red", "green3", "orange", "darkblue", "gold2", "darkgreen", "darkred", "grey", "darkgrey", "magenta", "darkorchid", "purple", "brown", "coral3", "turquoise", "deeppink", "lawngreen", "deepskyblue", "tomato")
+nmds(nymph, labs = FALSE, include_ellipse = FALSE, colours = colrs, legend_pos = "right", pt_size = 2)
 
 ```

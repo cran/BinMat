@@ -1,4 +1,4 @@
-## ----setup--------------------------------------------------------------------
+## ----setup, fig.height = 5, fig.width = 5-------------------------------------
 library(BinMat)
 
 data1 = BinMatInput_reps
@@ -45,5 +45,20 @@ scree(data2)
 shepard(data2)
 # Create an nMDS plot for the data. Default dimension is 2
 nmds(data2, colours = clrs, shapes = shps, labs = TRUE)
+
+
+## ----fig.height = 5, fig.width = 5--------------------------------------------
+
+bunias = bunias_orientalis
+group.names(bunias)
+nmds(bunias, labs = FALSE, include_ellipse = TRUE, legend_pos = "right")
+
+
+## ----fig.height = 7, fig.width = 7--------------------------------------------
+
+nymph = nymphaea
+group.names(nymph)
+colrs = c("dodgerblue", "black", "red", "green3", "orange", "darkblue", "gold2", "darkgreen", "darkred", "grey", "darkgrey", "magenta", "darkorchid", "purple", "brown", "coral3", "turquoise", "deeppink", "lawngreen", "deepskyblue", "tomato")
+nmds(nymph, labs = FALSE, include_ellipse = FALSE, colours = colrs, legend_pos = "right", pt_size = 2)
 
 
