@@ -29,7 +29,7 @@ The idea behind this package was taken from my M.Sc. project <br/>
 See the publication in the [Biological Control journal](https://www.sciencedirect.com/science/article/pii/S1049964420306538), and the thesis on [Research Gate](https://www.researchgate.net/publication/339124038_A_genetic_analysis_of_the_species_and_intraspecific_lineages_of_Dactylopius_Costa_Hemiptera_Dactylopiidae). The GUI version of this package is available on the [R Shiny online server](https://clarkevansteenderen.shinyapps.io/BINMAT/), or it is accessible via GitHub by typing:
 
 ```{}
-shiny::runGitHub("BinMat", "CJMvS")
+shiny::runGitHub("BinMat", "clarkevansteenderen")
 ```
 
 into the console in R.
@@ -103,7 +103,7 @@ Binary data that has already been consolidated must have grouping information in
 | consolidate()        | Reads in a binary matrix comprising replicate pairs and consolidates each pair into a consensus read. For each replicate pair at each locus, 1 &amp; 1 -&gt; 1 (shared presence), 0 &amp; 0 -&gt; 0 (shared absence), 0 &amp; 1 -&gt; ? (ambiguity).                                                                                                                                                                                                      |
 | errors()             | Calculates the Jaccard and Euclidean error rates for the dataset. Jaccard's error does not take shared absences of bands as being biologically meaningful. JE = (f10 + f01)/(f10 + f01 + f11) and EE = (f10 + f01)/(f10 + f01 + f11 + f00). At each locus, f01 and f10 indicates a case where a 0 was present in one replicate, and a 1 in the other. f11 indicates the shared presence of a band in both replicates, and f00 indicates a shared absence. |
 | group.names()        | Returns group names in the uploaded consolidated binary data. This will help in knowing which colours are assigned to which group name.                                                                                                                                                                                                                                                                                                                   |
-| nmds()               | Creates an nMDS plot from a consolidated binary matrix with grouping information. Colours and shapes of plotted points need to be specified.                                                                                                                                                                                                                                                                                                              |
+| nmds()               | Creates an nMDS plot from a consolidated binary matrix with grouping information. Colours of plotted points need to be specified.                                                                                                                                                                                                                                                                                                              |
 | peak.remove()        | Removes samples with a peak number less than a specified value.                                                                                                                                                                                                                                                                                                                                                                                           |
 | peaks.consolidated() | Returns total, maximum, and minimum number of peaks in a consolidated binary matrix.                                                                                                                                                                                                                                                                                                                                                                      |
 | peaks.original()     | Returns total, maximum, and minimum number of peaks in the binary matrix comprising replicates.                                                                                                                                                                                                                                                                                                                                                           |
@@ -207,17 +207,15 @@ filtered_data2 = peak.remove(data2, thresh = 7)
 filtered_data2
 # Get the names of the groups specified in the second column
 group.names(data2)
-# Create an object containing colours and pch shapes for each group
+# Create an object containing colours for each group
 # Colours: Africa = red, Australia = blue, Europe = dark green
 clrs = c("red", "blue", "darkgreen")
-# pch symbols: Africa = 16, Australia = 17, Europe = 4
-shps = c(16, 17, 4)
 # Create a scree plot to check how the number of dimensions for an nMDS plot will affect the resulting stress values
 scree(data2)
 # Create a shepard plot showing the goodness of fit for the original data vs the ordination data
 shepard(data2)
 # Create an nMDS plot for the data. Default dimension is 2
-nmds(data2, colours = clrs, shapes = shps, labs = TRUE)
+nmds(data2, colours = clrs, labs = TRUE)
 
 ```
 

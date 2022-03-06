@@ -9,8 +9,6 @@
 #' @param colours Vector containing colours to be assigned to groups. This can be changed to the options available in the RColorBrewer palette set (e.g. "Set1"). See <http://applied-r.com/rcolorbrewer-palettes/> for more palette options.
 #'  Alternatively, the colours can be set manually using, for example, c("red", "green", "blue"), thereby setting a colour for each group
 #'  in your dataset. There are 28 default colours that will be set automatically to your groups.
-#' @param shapes Vector containing pch values for shapes to be used for points. The default is set to round filled circles (pch = 16).
-#' To change this to custom shapes, use something like c(2,3,16) for each group you have in the dataset.
 #' @param labs Indicate whether labels should appear on the graph or not (TRUE or FALSE). Default = FALSE.
 #' @param legend_pos Indicate the position of the legend. Default = "right", but other options are "left", "bottom", "top", or "none"
 #' @param include_ellipse Indicate whether ellipses should be included around groups. Default = FALSE.
@@ -22,8 +20,7 @@
 #' @examples  mat = BinMatInput_ordination
 #' group.names(mat)
 #' clrs = c("red", "green", "black")
-#' shps = c(16,10,12)
-#' nmds(mat, colours = clrs, shapes = shps, labs = TRUE, include_ellipse = TRUE)
+#' nmds(mat, colours = clrs, labs = TRUE, include_ellipse = TRUE)
 #'
 #' @export
 
@@ -33,7 +30,8 @@ nmds = function(x, dist_meth = "binary", k_val = 2, pt_size = 1,
                             "purple", "brown", "coral3", "turquoise", "deeppink", "lawngreen",
                             "deepskyblue", "tomato", "yellow", "yellowgreen",
                             "royalblue", "olivedrab", "midnightblue", "indianred1", "darkturquoise"),
-                shapes = 16, labs = FALSE,
+                #shapes = 16,
+                labs = FALSE,
                 legend_pos = "right",
                 include_ellipse = FALSE,
                 ellipse_type = "norm", dimension1 = 1,
@@ -73,16 +71,14 @@ nmds = function(x, dist_meth = "binary", k_val = 2, pt_size = 1,
 
   isoplot_df$groups = fac
 
-  if(length(shapes) == 1){shapes_nmds = rep(shapes, length(fac))} # if only one shape is specified, apply it to all groups
-  else shapes_nmds = shapes
-
-  nmds = suppressWarnings( ggpubr::ggscatter(isoplot_df,
+  nmds = #suppressWarnings(
+                   ggpubr::ggscatter(isoplot_df,
                     x = x_dimension,
                     y = y_dimension,
                     label = mds_labs,
                     color = "groups",
                     palette = colours,
-                    shape = shapes_nmds[fac],
+                    #shape = shapes_nmds[fac],
                     ellipse = include_ellipse,
                     ellipse.type = ellipse_type,
                     size = pt_size,
@@ -90,7 +86,7 @@ nmds = function(x, dist_meth = "binary", k_val = 2, pt_size = 1,
                     legend.title = "Groups",
                     show.legend.text = FALSE
 
-  ) ) # end of suppress warnings
+  ) #) # end of suppress warnings
 
 
   return(nmds)

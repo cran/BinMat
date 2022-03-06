@@ -22,7 +22,5 @@ pks = peaks.consolidated(cons)
 err = errors(cons)
 rem = peak.remove(cons, 4)
 clust = upgma(cons)
-
-
 }
 \keyword{datasets}

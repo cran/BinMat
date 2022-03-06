@@ -5,9 +5,10 @@
 #' @usage data(bunias_orientalis)
 #'
 #' @format A dataframe with columns for loci, and rows of replicate pairs. Grouping information is in the second column.
-#' @examples data(bunias_orientalis)
-#' mat = bunias_orientalis
-#' group.names(mat)
-#' nmds(mat, labs = TRUE, include_ellipse = TRUE)
-
+#' @example
+#' bunias = bunias_orientalis
+#' group.names(bunias)
+#' nmds(bunias, labs = FALSE, include_ellipse = TRUE, legend_pos = "right")
+#'
+#'
 "bunias_orientalis"

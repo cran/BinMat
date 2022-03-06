@@ -34,17 +34,15 @@ filtered_data2 = peak.remove(data2, thresh = 7)
 filtered_data2
 # Get the names of the groups specified in the second column
 group.names(data2)
-# Create an object containing colours and pch shapes for each group
+# Create an object containing colours for each group
 # Colours: Africa = red, Australia = blue, Europe = dark green
 clrs = c("red", "blue", "darkgreen")
-# pch symbols: Africa = 16, Australia = 17, Europe = 4
-shps = c(16, 17, 4)
 # Create a scree plot to check how the number of dimensions for an nMDS plot will affect the resulting stress values
 scree(data2)
 # Create a shepard plot showing the goodness of fit for the original data vs the ordination data
 shepard(data2)
 # Create an nMDS plot for the data. Default dimension is 2
-nmds(data2, colours = clrs, shapes = shps, labs = TRUE)
+nmds(data2, colours = clrs, labs = TRUE)
 
 
 ## ----fig.height = 5, fig.width = 5--------------------------------------------

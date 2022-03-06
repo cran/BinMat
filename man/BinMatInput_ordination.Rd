@@ -20,7 +20,6 @@ group.names(mat)
 scree(mat)
 shepard(mat)
 clrs = c("red", "green", "black")
-shp = c(16,16,16)
-nmds(mat, colours = clrs, shapes = shp, labs = TRUE)
+nmds(mat, colours = clrs, labs = TRUE)
 }
 \keyword{datasets}
